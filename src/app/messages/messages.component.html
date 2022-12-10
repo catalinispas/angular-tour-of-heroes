@@ -1,0 +1,11 @@
+<h2>Messages</h2>
+<div *ngIf="messageService.messages.length; else noMessages">
+  <button class="clear" (click)="messageService.clear()">Clear</button>
+  <ul>
+    <li *ngFor="let message of messageService.messages">
+      {{ message }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #noMessages> There are no messages. </ng-template>
